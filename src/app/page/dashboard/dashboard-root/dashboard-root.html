@@ -1,0 +1,173 @@
+
+<div class="dashboard-wrapper">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">🛒</div>
+      <h1>Grocery Shop</h1>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="#" class="nav-item active">
+        <span class="icon">📊</span>
+        <span>Dashboard</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">📦</span>
+        <span>Products</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">👥</span>
+        <span>Customers</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">🛍️</span>
+        <span>Orders</span>
+      </a>
+      <a href="#" class="nav-item">
+        <span class="icon">⚙️</span>
+        <span>Settings</span>
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <a href="#" class="nav-item logout">
+        <span class="icon">🚪</span>
+        <span>Logout</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <div>
+        <h2>Welcome Back!</h2>
+        <p class="header-subtitle">Here's what's happening today</p>
+      </div>
+      <div class="header-right">
+        <input type="text" class="search-box" placeholder="🔍 Search...">
+        <div class="user-profile">👤 Admin</div>
+      </div>
+    </header>
+
+    <!-- Content Area -->
+    <div class="dashboard-content">
+      <!-- Stats Cards -->
+      <section class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #667eea, #764ba2);">💰</div>
+          <h3>Total Revenue</h3>
+          <p class="stat-value">$45,230</p>
+          <span class="stat-change">↑ 12.5%</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb, #f5576c);">📦</div>
+          <h3>Products</h3>
+          <p class="stat-value">320</p>
+          <span class="stat-change">↑ 8.2%</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">👥</div>
+          <h3>Customers</h3>
+          <p class="stat-value">1,240</p>
+          <span class="stat-change">↑ 5.1%</span>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">🛍️</div>
+          <h3>Orders</h3>
+          <p class="stat-value">42</p>
+          <span class="stat-change negative">↓ 2.3%</span>
+        </div>
+      </section>
+
+      <!-- Tables Section -->
+      <div class="two-col-layout">
+        <!-- Orders Table -->
+        <section class="table-section">
+          <div class="section-header">
+            <h3>Recent Orders</h3>
+            <a href="#" class="view-all">View All →</a>
+          </div>
+          <table class="dashboard-table">
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer</th>
+                <th>Amount</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#ORD001</td>
+                <td>John Smith</td>
+                <td>$250.00</td>
+                <td><span class="badge delivered">Delivered</span></td>
+              </tr>
+              <tr>
+                <td>#ORD002</td>
+                <td>Sarah Johnson</td>
+                <td>$180.50</td>
+                <td><span class="badge pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>#ORD003</td>
+                <td>Mike Davis</td>
+                <td>$320.00</td>
+                <td><span class="badge processing">Processing</span></td>
+              </tr>
+              <tr>
+                <td>#ORD004</td>
+                <td>Emily Brown</td>
+                <td>$95.75</td>
+                <td><span class="badge delivered">Delivered</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- Top Products -->
+        <section class="products-section">
+          <div class="section-header">
+            <h3>Top Products</h3>
+            <a href="#" class="view-all">View All →</a>
+          </div>
+          <div class="product-list">
+            <div class="product-item">
+              <span class="product-emoji">🍎</span>
+              <div class="product-info">
+                <h4>Fresh Apples</h4>
+                <p>128 sold • $3.99/kg</p>
+              </div>
+              <span class="product-growth">↑ 45%</span>
+            </div>
+            <div class="product-item">
+              <span class="product-emoji">🥕</span>
+              <div class="product-info">
+                <h4>Organic Carrots</h4>
+                <p>95 sold • $2.49</p>
+              </div>
+              <span class="product-growth">↑ 32%</span>
+            </div>
+            <div class="product-item">
+              <span class="product-emoji">🥬</span>
+              <div class="product-info">
+                <h4>Fresh Lettuce</h4>
+                <p>67 sold • $1.99</p>
+              </div>
+              <span class="product-growth">↑ 18%</span>
+            </div>
+            <div class="product-item">
+              <span class="product-emoji">🍊</span>
+              <div class="product-info">
+                <h4>Fresh Oranges</h4>
+                <p>112 sold • $4.99</p>
+              </div>
+              <span class="product-growth">↑ 41%</span>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
