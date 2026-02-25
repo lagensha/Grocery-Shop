@@ -1,189 +1,92 @@
+<div class="p-4 sm:ml-64">
+  <div class="p-4 border-1 border-default border-dashed rounded-base">
+    <div class="form-container">
+      <form class="customer-form">
+        <h1 class="form-title">Customer Registration</h1>
 
-<div class="customers-page">
-  <!-- Header Section -->
-  <header class="customers-header">
-    <div class="header-content">
-      <h1 class="page-title">👥 Customers</h1>
-      <p class="page-subtitle">Manage and view all your valued customers</p>
-    </div>
-    <div class="header-actions">
-      <div class="search-wrapper">
-        <input type="text" class="search-input" placeholder="🔍 Search customers...">
-      </div>
-      <button class="btn-primary">+ Add Customer</button>
-    </div>
-  </header>
+        <div class="form-group">
+          <label for="customerId">Customer Id</label>
+          <input type="text" id="customerId" placeholder="Enter Customer Id" required [(ngModel)]="customerObj.id" name="id"/>
+        </div>
 
-  <!-- Stats Bar -->
-  <div class="customers-stats">
-    <div class="stat-item">
-      <span class="stat-icon">👥</span>
-      <div class="stat-text">
-        <p class="stat-number">1,240</p>
-        <p class="stat-label">Total Customers</p>
-      </div>
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input type="text" id="title" placeholder="Mr / Mrs / Miss" required [(ngModel)]="customerObj.title" name="title"/>
+        </div>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Full Name" required [(ngModel)]="customerObj.name" name="name"/>
+        </div>
+
+        <div class="form-group">
+          <label for="dob">Date Of Birth</label>
+          <input type="date" id="dob" required [(ngModel)]="customerObj.dob" name="dob"/>
+        </div>
+
+        <div class="form-group">
+          <label for="salary">Salary</label>
+          <input type="number" id="salary" placeholder="0.00" required [(ngModel)]="customerObj.salary" name="salary"/>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" placeholder="Street Address" required [(ngModel)]="customerObj.address" name="address"/>
+        </div>
+
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" placeholder="City" required [(ngModel)]="customerObj.city" name="city"/>
+        </div>
+
+        <div class="form-group">
+          <label for="province">Province</label>
+          <input type="text" id="province" placeholder="Province" required [(ngModel)]="customerObj.province" name="province"/>
+        </div>
+
+        <div class="form-group">
+          <label for="postal">Postal Code</label>
+          <input type="text" id="postal" placeholder="Postal Code" required [(ngModel)]="customerObj.postalcode" name="postalCode"/>
+        </div>
+
+        <button type="submit" class="submit-btn" (click)="addCustomer()">Add Customer</button>
+      </form>
     </div>
-    <div class="stat-item">
-      <span class="stat-icon">✅</span>
-      <div class="stat-text">
-        <p class="stat-number">856</p>
-        <p class="stat-label">Active</p>
-      </div>
-    </div>
-    <div class="stat-item">
-      <span class="stat-icon">📞</span>
-      <div class="stat-text">
-        <p class="stat-number">342</p>
-        <p class="stat-label">Contacted This Month</p>
-      </div>
-    </div>
-    <div class="stat-item">
-      <span class="stat-icon">💰</span>
-      <div class="stat-text">
-        <p class="stat-number">$125K</p>
-        <p class="stat-label">Lifetime Value</p>
-      </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr class="table-header">
+            <th>ID</th>
+            <th>Title</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Salary</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Province</th>
+            <th>Postal Code</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let customer of customerList; let i = index">
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.title }}</td>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.dob }}</td>
+            <td>{{ customer.salary }}</td>
+            <td>{{ customer.address }}</td>
+            <td>{{ customer.city }}</td>
+            <td>{{ customer.province }}</td>
+            <td>{{ customer.postalCode }}</td>
+            <td>
+              <button class="btn btn-edit" (click)="getAll()">Edit</button>
+              <button class="btn btn-delete" (click)="deleteCustomer(customer.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
-
-  <!-- Customers Grid -->
-  <section class="customers-grid">
-    <!-- Customer Card 1 -->
-    <div class="customer-card">
-      <div class="card-header">
-        <div class="avatar avatar-1">AJ</div>
-        <div class="status-badge active">Active</div>
-      </div>
-      <div class="card-body">
-        <h3 class="customer-name">Alice Johnson</h3>
-        <p class="customer-email">📧 alice@example.com</p>
-        <p class="customer-phone">📱 +1 (555) 0123</p>
-        <p class="customer-joined">📅 Joined Jun 12, 2024</p>
-        <div class="customer-stats">
-          <span class="stat-badge">💵 $12,450</span>
-          <span class="stat-badge">📦 24 orders</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <button class="btn-secondary">View</button>
-        <button class="btn-secondary">Edit</button>
-        <button class="btn-danger">Delete</button>
-      </div>
-    </div>
-
-    <!-- Customer Card 2 -->
-    <div class="customer-card">
-      <div class="card-header">
-        <div class="avatar avatar-2">BS</div>
-        <div class="status-badge active">Active</div>
-      </div>
-      <div class="card-body">
-        <h3 class="customer-name">Bob Smith</h3>
-        <p class="customer-email">📧 bob@example.com</p>
-        <p class="customer-phone">📱 +1 (555) 0456</p>
-        <p class="customer-joined">📅 Joined Nov 03, 2023</p>
-        <div class="customer-stats">
-          <span class="stat-badge">💵 $28,900</span>
-          <span class="stat-badge">📦 58 orders</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <button class="btn-secondary">View</button>
-        <button class="btn-secondary">Edit</button>
-        <button class="btn-danger">Delete</button>
-      </div>
-    </div>
-
-    <!-- Customer Card 3 -->
-    <div class="customer-card">
-      <div class="card-header">
-        <div class="avatar avatar-3">CR</div>
-        <div class="status-badge active">Active</div>
-      </div>
-      <div class="card-body">
-        <h3 class="customer-name">Carla Reyes</h3>
-        <p class="customer-email">📧 carla@example.com</p>
-        <p class="customer-phone">📱 +1 (555) 0789</p>
-        <p class="customer-joined">📅 Joined Jan 25, 2025</p>
-        <div class="customer-stats">
-          <span class="stat-badge">💵 $5,320</span>
-          <span class="stat-badge">📦 8 orders</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <button class="btn-secondary">View</button>
-        <button class="btn-secondary">Edit</button>
-        <button class="btn-danger">Delete</button>
-      </div>
-    </div>
-
-    <!-- Customer Card 4 -->
-    <div class="customer-card">
-      <div class="card-header">
-        <div class="avatar avatar-4">DT</div>
-        <div class="status-badge inactive">Inactive</div>
-      </div>
-      <div class="card-body">
-        <h3 class="customer-name">David Turner</h3>
-        <p class="customer-email">📧 david@example.com</p>
-        <p class="customer-phone">📱 +1 (555) 0999</p>
-        <p class="customer-joined">📅 Joined Aug 19, 2022</p>
-        <div class="customer-stats">
-          <span class="stat-badge">💵 $45,670</span>
-          <span class="stat-badge">📦 95 orders</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <button class="btn-secondary">View</button>
-        <button class="btn-secondary">Edit</button>
-        <button class="btn-danger">Delete</button>
-      </div>
-    </div>
-
-    <!-- Customer Card 5 -->
-    <div class="customer-card">
-      <div class="card-header">
-        <div class="avatar avatar-5">EW</div>
-        <div class="status-badge active">Active</div>
-      </div>
-      <div class="card-body">
-        <h3 class="customer-name">Emma Wilson</h3>
-        <p class="customer-email">📧 emma@example.com</p>
-        <p class="customer-phone">📱 +1 (555) 1357</p>
-        <p class="customer-joined">📅 Joined Dec 10, 2024</p>
-        <div class="customer-stats">
-          <span class="stat-badge">💵 $8,950</span>
-          <span class="stat-badge">📦 18 orders</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <button class="btn-secondary">View</button>
-        <button class="btn-secondary">Edit</button>
-        <button class="btn-danger">Delete</button>
-      </div>
-    </div>
-
-    <!-- Customer Card 6 -->
-    <div class="customer-card">
-      <div class="card-header">
-        <div class="avatar avatar-6">FM</div>
-        <div class="status-badge active">Active</div>
-      </div>
-      <div class="card-body">
-        <h3 class="customer-name">Frank Miller</h3>
-        <p class="customer-email">📧 frank@example.com</p>
-        <p class="customer-phone">📱 +1 (555) 2468</p>
-        <p class="customer-joined">📅 Joined Mar 05, 2024</p>
-        <div class="customer-stats">
-          <span class="stat-badge">💵 $18,320</span>
-          <span class="stat-badge">📦 42 orders</span>
-        </div>
-      </div>
-      <div class="card-footer">
-        <button class="btn-secondary">View</button>
-        <button class="btn-secondary">Edit</button>
-        <button class="btn-danger">Delete</button>
-      </div>
-    </div>
-  </section>
 </div>

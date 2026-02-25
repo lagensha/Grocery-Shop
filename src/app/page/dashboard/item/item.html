@@ -1,1 +1,103 @@
-<p>item works!</p>
+<div class="p-4 sm:ml-64">
+  <div class="p-4 border-1 border-default border-dashed rounded-base">
+    <div class="form-container">
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr class="table-header">
+              <th>Item Code</th>
+              <th>Description</th>
+              <th>PackSize</th>
+              <th>UnitPrice</th>
+              <th>QtyOnHand</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of itemList">
+              <td>{{ item.itemCode }}</td>
+              <td>{{ item.description }}</td>
+              <td>{{ item.packSize }}</td>
+              <td>{{ item.unitPrice }}</td>
+              <td>{{ item.qtyOnHand }}</td>
+              <td>
+                <button class="btn btn-edit" (click)="getAll()">Edit</button>
+                &nbsp;
+                <button class="btn btn-delete" (click)="deleteItem(item.itemCode)">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="p-4 sm:ml-64">
+  <div class="p-4 border-1 border-default border-dashed rounded-base">
+    <!-- <div class="form-container"> -->
+    <form class="customer-form">
+      <h1 class="form-title">Products Enter</h1>
+
+      <div class="form-group">
+        <label for="itemCode">Item Code</label>
+        <input
+          type="text"
+          id="itemCode"
+          placeholder="Enter Item Code"
+          required
+          [(ngModel)]="itemobj.itemCode"
+          name="itemCode"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          type="text"
+          id="description"
+          placeholder="Description"
+          required
+          [(ngModel)]="itemobj.description"
+          name="description"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="packSize">Pack Size</label>
+        <input
+          type="text"
+          id="Pack Size"
+          placeholder="Pack Size"
+          required
+          [(ngModel)]="itemobj.packSize"
+          name="packSize"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="unitPrice">Unit Price</label>
+        <input
+          type="text"
+          id="unitPrice"
+          placeholder="0.00"
+          required
+          [(ngModel)]="itemobj.unitPrice"
+          name="unitPrice"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="qtyOnHand">QtyOnHand</label>
+        <input
+          type="text"
+          id="qtyOnHand"
+          placeholder="QtyOnHand"
+          required
+          [(ngModel)]="itemobj.qtyOnHand"
+          name="qtyOnHand"
+        />
+      </div>
+      <button type="submit" class="submit-btn" (click)="addItem()">Add Item</button>
+    </form>
+  </div>
+</div>
+<!-- </div> -->

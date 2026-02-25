@@ -1,0 +1,179 @@
+
+
+/* Dark Background Container */
+.form-container {
+    background-color: #1e1e2f;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Table Wrapper */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #252538;
+    color: #e4e4e7;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Header Styling */
+.table-header {
+    background-color: #111827;
+}
+
+th {
+    padding: 14px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    color: #9ca3af;
+    border-bottom: 1px solid #374151;
+}
+
+/* Table Body */
+td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #374151;
+    font-size: 14px;
+}
+
+/* Hover Effect */
+tbody tr:hover {
+    background-color: #2d2d44;
+    transition: 0.3s;
+}
+
+/* Buttons */
+.btn {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+/* Edit Button */
+.btn-edit {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-edit:hover {
+    background-color: #1d4ed8;
+}
+
+/* Delete Button (if you enable later) */
+.btn-delete {
+    background-color: #dc2626;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #b91c1c;
+}
+/* ===== Form Styling ===== */
+.customer-form {
+  background: #1e293b;
+  padding: 45px;             /* Increased padding for a spacious look */
+  border-radius: 24px;
+  width: 90%;                /* Responsive width for small screens */
+  max-width: 650px;          /* Makes the form significantly bigger on desktop */
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: popIn 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  /* Centering logic within the flex container */
+  margin: auto; 
+}
+
+/* ===== Improved Form Spacing ===== */
+.form-group {
+  margin-bottom: 20px;       /* More space between rows */
+  display: flex;
+  flex-direction: column;
+  color: #eff1f5;
+}
+
+.form-group input {
+  padding: 14px;             /* Slightly larger inputs to match the bigger form */
+  font-size: 16px;           /* Better readability */
+  border-radius: 10px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: white;
+  transition: border 0.2s ease;
+
+}
+
+/* Optional: Grid layout for side-by-side inputs on large forms */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Ensure the title scales well */
+.form-title {
+  color: #f1f5f9;
+  font-size: 28px;           /* Larger title */
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: sans-serif;
+}
+/* ===== Submit Button Styling ===== */
+.submit-btn {
+  width: 100%;
+  padding: 14px 20px;
+  margin-top: 20px;
+  
+  /* Modern Gradient */
+  background: linear-gradient(90deg, #7c3aed, #ec4899);
+  color: #ffffff;
+  
+  /* Typography */
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  
+  /* Border & Shape */
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  
+  /* Smooth Transitions */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+  
+  /* Center the button if it's not full width */
+  display: block;
+}
+
+/* ===== Hover Effect (Mouse Over) ===== */
+.submit-btn:hover {
+  transform: translateY(-2px); /* Slight lift */
+  box-shadow: 0 8px 25px rgba(236, 72, 153, 0.5); /* Glow effect */
+  filter: brightness(1.1);
+}
+
+/* ===== Active Effect (While Clicking) ===== */
+.submit-btn:active {
+  transform: translateY(1px); /* Slight press down */
+  box-shadow: 0 2px 10px rgba(124, 58, 237, 0.3);
+  filter: brightness(0.9);
+}
+
+/* ===== Disabled State (Optional) ===== */
+.submit-btn:disabled {
+  background: #334155;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: 0.6;
+}
