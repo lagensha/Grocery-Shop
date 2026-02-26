@@ -70,5 +70,18 @@ addItem() : void{
             this.getAll();
           })
     }
+    update():void{
+      console.log(this.itemobj);
+      this.http.put<boolean>('http://localhost:8080/item/update',this.itemobj).subscribe(data=>{
+        console.log(data);
+        if(data===true){
+         Swal.fire({
+                title:"Update Success!"+this.itemobj.itemCode+"Saved!",
+                icon:"success"
+              })
+            }
+            this.getAll();
+          })
+    }
 }
 

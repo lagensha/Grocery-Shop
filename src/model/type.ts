@@ -17,3 +17,9 @@ export interface ItemModel {
   unitPrice: number;
   qtyOnHand: number;
 }
+
+export interface OrderModel{
+  id:string;
+  orderDate:string;
+  customerId:string;
+}

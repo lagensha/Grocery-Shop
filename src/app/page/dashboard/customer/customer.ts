@@ -18,7 +18,7 @@ export class Customer {
     title: '',
     name: '',
     dob: '',
-    salary:'',
+    salary: '',
     address: '',
     city: '',
     province: '',
@@ -36,42 +36,53 @@ export class Customer {
   }
   addCustomer(): void {
     console.log(this.customerObj);
-    this.http.post('http://localhost:8080/customer/add', this.customerObj).subscribe(data=>{
+    this.http.post('http://localhost:8080/customer/add', this.customerObj).subscribe((data) => {
       console.log(data);
-      if(data === true){
+      if (data === true) {
         Swal.fire({
-          title:"Good Job!"+this.customerObj.name+"Saved!",
-          icon:"success"
-        })
+          title: 'Good Job!' + this.customerObj.name + 'Saved!',
+          icon: 'success',
+        });
       }
       this.getAll();
-    })
+    });
   }
-  deleteCustomer(id:string){
-     Swal.fire({
-      title: "Are you sure?",
+  deleteCustomer(id: string) {
+    Swal.fire({
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!"
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
-
-        this.http.delete(`http://localhost:8080/customer/delete-by-id/${id}`).subscribe(data => {
+        this.http.delete(`http://localhost:8080/customer/delete-by-id/${id}`).subscribe((data) => {
           if (data === true) {
             Swal.fire({
-              title: "Deleted!",
-              text: "Your file has been deleted.",
-              icon: "success"
+              title: 'Deleted!',
+              text: 'Your file has been deleted.',
+              icon: 'success',
             });
             this.getAll();
           }
-        })
-        console.log("http://localhost:8080/customer/delete-by-id/"+id)
- }
-    })
+        });
+        console.log('http://localhost:8080/customer/delete-by-id/' + id);
+      }
+    });
   }
-  
+  update(): void {
+    console.log(this.customerObj);
+    this.http.put('http://localhost:8080/customer/update', this.customerObj).subscribe(data => {
+        console.log(data);
+        if (data === true) {
+          Swal.fire({
+            title: 'Update Success!' + this.customerObj.id + 'Saved!',
+            icon: 'success',
+          })        
+        }
+        this.getAll();
+      })
+  }
 }
